@@ -1,0 +1,23 @@
+
+address = 1
+
+while True : 
+	address = int(input())
+
+	#print(address)
+	if address == 0 : break
+	
+	tmpad = address
+	ans = 1
+	while tmpad != 0 :
+		ans += 1
+		num = tmpad % 10
+		tmpad //= 10
+		
+		if num == 0: 
+			ans+=4
+		elif num == 1:
+			ans +=2
+		else :
+			ans+= 3
+	print(ans)
