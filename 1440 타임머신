@@ -1,0 +1,25 @@
+
+time = input()
+
+num = [int(time[:2]),int(time[3:5]),int(time[6:])]
+ans = [0,0,0]
+
+
+if (1<= num[0] <= 12 or 1<= num[1] <= 12 or 1<= num[2] <= 12) and (not (num[0] > 59 or num[1] > 59 or num[2] > 59 ))  :
+	for idx in range(3):
+		if 1<= num[idx] <=12:
+			ans[idx] += 2
+		elif 0<= num[idx] <60: 
+			ans[idx] +=1
+
+	ans[0] = ans[0]*ans[1]*ans[2]
+
+	if ans[0] == 8 :				# 변수가 3개 뿐이라 하드코딩
+		ans[0] = 6
+
+	print(ans[0])
+
+	
+else:
+	print(0)
+	
