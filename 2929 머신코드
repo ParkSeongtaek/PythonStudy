@@ -1,0 +1,13 @@
+inputstr =input()
+idx = 0
+ans = 0
+for char in inputstr:
+	if(ord('A') <= ord(char) <= ord('Z') ):
+		if idx % 4 != 0:
+			tmp = 4 - (idx % 4)
+
+			idx+=tmp;
+			ans+=tmp;
+	idx+=1
+
+print(ans)
