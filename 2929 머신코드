@@ -10,4 +10,5 @@ for char in inputstr:
 			ans+=tmp;
 	idx+=1
 
+
 print(ans)
