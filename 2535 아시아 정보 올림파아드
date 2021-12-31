@@ -1,0 +1,51 @@
+
+class Student:
+	def __init__(self, con ,ID,score ):
+		self.Con = con
+		self.ID = ID
+		self.Score = score
+
+
+	def __gt__ (self, other):
+		return self.Score > other.Score
+	
+
+arrCon = [0]*100
+
+con = 0
+ID = 0
+Score = 0
+tmp = 0
+ttmp = 0
+strData =""
+arrScore = []
+numPeople = int(input())
+
+for i in range(numPeople):
+	strData = input()
+	tmp = strData.find(" ")
+	con = int(strData[:tmp])
+	ttmp = strData.find(" ",tmp+1)
+	ID = int (strData[tmp+1:ttmp])
+	Score = int (strData[ttmp+1 : ])
+	st = Student(con,ID,Score) 
+	arrScore.append(st)
+
+arrScore.sort()
+arrScore.reverse()
+i=0
+L= len(arrScore)
+idx = 0
+
+
+	
+while i < L:
+	if arrCon[arrScore[i].Con] < 2:
+		arrCon[arrScore[i].Con] +=1
+		print(arrScore[i].Con,arrScore[i].ID)
+		idx+=1
+	if(idx ==3 ):
+		break
+	
+	i+=1
+
