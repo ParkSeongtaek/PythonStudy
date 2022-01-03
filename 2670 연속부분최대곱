@@ -1,0 +1,7 @@
+N = int(input())
+arrD = [float(input()) for i in range(N)]
+maxnum = 0.0
+for i in  range(1,N):
+    arrD[i] = max(arrD[i] ,arrD[i] * arrD[i-1] )
+   
+print("%.3f" % max(arrD))
