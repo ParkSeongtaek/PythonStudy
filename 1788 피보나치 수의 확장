@@ -1,22 +1,21 @@
-arrDPFiv = [0,1];
-arrDPFiv[1] = 1;
+n= int(input())
 
-n = int(input());
-if n < 0:
-    if abs(n) % 2 == 0:
-        print(-1);
-    else:
-        print(1);
+arrFiv = [0,1]
 
-elif n == 0:
+
+if n == 0:
     print(0)
-
+elif n<0:
+    if(abs(n)%2 == 0):
+        print(-1)
+    else:
+        print(1)
 else:
     print(1)
 
-for i in range(2,abs(n)+1):
-    arrDPFiv.append((arrDPFiv[i-2] + arrDPFiv[i-1])%1000000000)
-print(arrDPFiv[abs(n)])
 
 
+for idx in range(2,abs(n) + 1):
+    arrFiv.append((arrFiv[idx - 1] + arrFiv[idx - 2]) % 1000000000)
 
+print(arrFiv[abs(n)])
