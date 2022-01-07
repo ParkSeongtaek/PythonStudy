@@ -1,0 +1,31 @@
+D = input()
+
+
+K = int(D[D.find(" ")+1:])
+D = int(D[:D.find(" ")])
+
+arrFiv = [0,1]
+
+
+for idx in range(2,31):
+    arrFiv.append((arrFiv[idx - 1] + arrFiv[idx - 2]) % 1000000000)
+
+A = 1
+tmp = 0
+B = 2
+
+while A <= K:
+    tmp = K - arrFiv[D - 2] * A
+    if(tmp % arrFiv[D-1] == 0):
+        B = tmp // arrFiv[D-1]
+        break
+    else :
+        A = A + 1
+
+
+
+
+print(A)
+print(B)
+
+
